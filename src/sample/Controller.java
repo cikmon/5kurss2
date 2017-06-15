@@ -247,22 +247,22 @@ public class Controller {
         exit:
         for (int i = 0; i < nustnovl; i++) {
             if (osnovnoi[i].coordX() >= x & osnovnoi[i].coordX() <= x + width &
-                    osnovnoi[i].coordY()<= y &osnovnoi[i].coordY()+osnovnoi[i].haight()>= y &
-                    osnovnoi[i].coordZ()<=z&osnovnoi[i].coordZ()+osnovnoi[i].lenght()>=z|
+                    osnovnoi[i].coordY()<= y & osnovnoi[i].coordY()+osnovnoi[i].haight()>= y &
+                    osnovnoi[i].coordZ()<=z& osnovnoi[i].coordZ()+osnovnoi[i].lenght()>=z|
 
-                    osnovnoi[i].coordX() > x & osnovnoi[i].coordX() <= x + width &
+                    osnovnoi[i].coordX() >= x & osnovnoi[i].coordX() <= x + width &
                             osnovnoi[i].coordY()>= y &osnovnoi[i].coordY()<= y+height &
                             osnovnoi[i].coordZ()<=z&osnovnoi[i].coordZ()+osnovnoi[i].lenght()>=z|
 
-                    osnovnoi[i].coordX() <= x & osnovnoi[i].coordX()+osnovnoi[i].width()  <= x  &
+                    osnovnoi[i].coordX() <= x & osnovnoi[i].coordX()+osnovnoi[i].width()  >= x  &
                             osnovnoi[i].coordY()>= y &osnovnoi[i].coordY()<= y+height &
                             osnovnoi[i].coordZ()<=z&osnovnoi[i].coordZ()+osnovnoi[i].lenght()>=z|
 
                     osnovnoi[i].coordX() <= x & osnovnoi[i].coordX() +osnovnoi[i].width() >= x  &
-                            osnovnoi[i].coordY()>= y &osnovnoi[i].coordY()+osnovnoi[i].haight()>= y &
+                            osnovnoi[i].coordY()<= y &osnovnoi[i].coordY()+osnovnoi[i].haight()>= y &
                             osnovnoi[i].coordZ()<=z&osnovnoi[i].coordZ()+osnovnoi[i].lenght()>=z|
 
-
+                   ///////////////////////////////
                     osnovnoi[i].coordX() >= x & osnovnoi[i].coordX() <= x + width &
                             osnovnoi[i].coordY()<= y &osnovnoi[i].coordY()+osnovnoi[i].haight()>= y &
                             osnovnoi[i].coordZ()>=z&osnovnoi[i].coordZ()<=z+length|
@@ -274,15 +274,16 @@ public class Controller {
                     osnovnoi[i].coordX() <= x & osnovnoi[i].coordX()+osnovnoi[i].width()  <= x  &
                             osnovnoi[i].coordY()>= y &osnovnoi[i].coordY()<= y+height &
                             osnovnoi[i].coordZ()>=z&osnovnoi[i].coordZ()<=z+length|
+
                     osnovnoi[i].coordX() <= x & osnovnoi[i].coordX() +osnovnoi[i].width() >= x  &
-                            osnovnoi[i].coordY()>= y &osnovnoi[i].coordY()+osnovnoi[i].haight()>= y &
+                            osnovnoi[i].coordY()<= y &osnovnoi[i].coordY()+osnovnoi[i].haight()>= y &
                             osnovnoi[i].coordZ()>=z&osnovnoi[i].coordZ()<=z+length|
 
 
 
-                    x <= ThicknessRrazmerKorpusa || x + width >= WrazmerKorpusa-ThicknessRrazmerKorpusa ||
-                    y <= ThicknessRrazmerKorpusa ||y + height >= HrazmerKorpusa -ThicknessRrazmerKorpusa||
-                    z <= ThicknessRrazmerKorpusa || z + length >= LrazmerKorpusa-ThicknessRrazmerKorpusa) {
+                    x <= ThicknessRrazmerKorpusa | x + width >= WrazmerKorpusa-ThicknessRrazmerKorpusa |
+                    y <= ThicknessRrazmerKorpusa |y + height >= HrazmerKorpusa -ThicknessRrazmerKorpusa|
+                    z <= ThicknessRrazmerKorpusa | z + length >= LrazmerKorpusa-ThicknessRrazmerKorpusa) {
 
 /*
                 System.out.println(z+" y="+y+" z="+z);
@@ -432,20 +433,22 @@ public class Controller {
     }
 
     public void metodInstalOthers() {
-
+        System.out.println("hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
         for (int i = 0; i < bd.length; i++) {
             if(bd[i].coordX()==-1000&&bd[i].coordY()==-1000&&bd[i].coordZ()==-1000&&bd[i].ryadom()==-1000) {
                 exit:
-                for (int kz = ThicknessRrazmerKorpusa; kz < LrazmerKorpusa-ThicknessRrazmerKorpusa; kz = kz + 30) {
-                    for (int ky = ThicknessRrazmerKorpusa; ky < HrazmerKorpusa-ThicknessRrazmerKorpusa; ky = ky + 30) {
-                        for (int kx = ThicknessRrazmerKorpusa; kx < WrazmerKorpusa-ThicknessRrazmerKorpusa; kx = kx + 30) {
+                for (int kz = ThicknessRrazmerKorpusa+5; kz < LrazmerKorpusa-ThicknessRrazmerKorpusa-5; kz = kz + 30) {
+                    for (int ky = ThicknessRrazmerKorpusa+5; ky < HrazmerKorpusa-ThicknessRrazmerKorpusa-5; ky = ky + 30) {
+                        for (int kx = ThicknessRrazmerKorpusa-5; kx < WrazmerKorpusa-ThicknessRrazmerKorpusa-5; kx = kx + 30) {
 
+                            System.out.println("do prov nustanovl="+nustnovl+" i="+i+" kz="+kz+" ky="+ky+" kx="+kx);
                             if (proverkaa(kx, ky, kz, bd[i].width(), bd[i].haight(), bd[i].length())) {
                                 osnovnoi[nustnovl] = new Ploskosti(bd[i].names(), bd[i].width(), bd[i].haight(), bd[i].length(),
                                         kx, ky, kz, bd[i].angleX(), bd[i].angleY(), bd[i].angleZ());
                                 nustnovl++;
                                 break exit;
                             }
+                            System.out.println("nustanovl="+nustnovl+" i="+i+" kz="+kz+" ky="+ky+" kx="+kx);
 
                         }
                     }

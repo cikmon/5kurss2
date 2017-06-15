@@ -179,7 +179,7 @@ public class Controller123 {
         System.out.println("t5 X=" + osnovnoi[0].poluchtochka5(0) + " Y" + osnovnoi[0].poluchtochka5(1) + " Z" + osnovnoi[0].poluchtochka5(2));
         System.out.println("t6 X=" + osnovnoi[0].poluchtochka6(0) + " Y" + osnovnoi[0].poluchtochka6(1) + " Z" + osnovnoi[0].poluchtochka6(2));
         System.out.println("t7 X=" + osnovnoi[0].poluchtochka7(0) + " Y" + osnovnoi[0].poluchtochka7(1) + " Z" + osnovnoi[0].poluchtochka7(2));
-        System.out.println("t8 X=" + osnovnoi[0].poluchtochka8(0) + " Y" + osnovnoi[0].poluchtochka8(1) + " Z" + osnovnoi[0].poluchtochka8(2));
+        System.out.println("t8   X=" + osnovnoi[0].poluchtochka8(0) + " Y" + osnovnoi[0].poluchtochka8(1) + " Z" + osnovnoi[0].poluchtochka8(2));
 
 
         osnovnoi[0].lengthpix();

@@ -203,7 +203,9 @@ public class SW {
                         "Set swMathUtil = swApp.GetMathUtility()\n" +
                         "Dim swTransform As Object\n" +
                         "Set swTransform = swMathUtil.CreateTransform((TransformDataVariant))\n" +
-                        "boolstatus = swInsertedComponent.SetTransformAndSolve2(swTransform)\n");
+                        "boolstatus = swInsertedComponent.SetTransformAndSolve2(swTransform)\n"+
+                        "boolstatus = Part.Extension.SelectByID2(\"korpus-1@Assem1\", \"COMPONENT\", 0, 0, 0, False, 0, Nothing, 0)\n" +
+                        "boolstatus = Part.SetComponentTransparent(True)\n");
 
 
                         for(int i=0;i<n;i++){
@@ -267,7 +269,7 @@ public class SW {
 
                 fw.write("Name;Width;Haight;Coord X;Coord Y;Ploskost;Ryadom;Angle;;;;\r\n");
 
-
+              ///
                 for(int i=0;i<ipl1;i++) {
 
                     String str = ploskost1[i].names();
