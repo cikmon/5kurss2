@@ -271,7 +271,7 @@ public class Controller {
                             osnovnoi[i].coordY()>= y &osnovnoi[i].coordY()<= y+height &
                             osnovnoi[i].coordZ()>=z&osnovnoi[i].coordZ()<=z+length|
 
-                    osnovnoi[i].coordX() <= x & osnovnoi[i].coordX()+osnovnoi[i].width()  <= x  &
+                    osnovnoi[i].coordX() <= x & osnovnoi[i].coordX()+osnovnoi[i].width()  >= x  &
                             osnovnoi[i].coordY()>= y &osnovnoi[i].coordY()<= y+height &
                             osnovnoi[i].coordZ()>=z&osnovnoi[i].coordZ()<=z+length|
 
@@ -360,9 +360,9 @@ public class Controller {
                     if (bd[i].ryadom() == Integer.parseInt(wsw)) {
 
                         exit:
-                        for (int kz = 1; kz < 300; kz = kz + 15) {
-                            for (int ky = 1; ky < 300; ky = ky + 15) {
-                                for (int kx = 1; kx < 300; kx = kx + 15) {
+                        for (int kz = 1; kz < 300; kz = kz + 5) {
+                            for (int ky = 1; ky < 300; ky = ky + 5) {
+                                for (int kx = 1; kx < 300; kx = kx + 5) {
 
                                     //справа n
                                     if (proverkaa(osnovnoi[j].coordX() + osnovnoi[j].width() + kx, osnovnoi[j].coordY() + ky, osnovnoi[j].coordZ() + kz, bd[i].width(), bd[i].haight(), bd[i].length())) {
@@ -437,9 +437,9 @@ public class Controller {
         for (int i = 0; i < bd.length; i++) {
             if(bd[i].coordX()==-1000&&bd[i].coordY()==-1000&&bd[i].coordZ()==-1000&&bd[i].ryadom()==-1000) {
                 exit:
-                for (int kz = ThicknessRrazmerKorpusa+5; kz < LrazmerKorpusa-ThicknessRrazmerKorpusa-5; kz = kz + 30) {
-                    for (int ky = ThicknessRrazmerKorpusa+5; ky < HrazmerKorpusa-ThicknessRrazmerKorpusa-5; ky = ky + 30) {
-                        for (int kx = ThicknessRrazmerKorpusa-5; kx < WrazmerKorpusa-ThicknessRrazmerKorpusa-5; kx = kx + 30) {
+                for (int kz = ThicknessRrazmerKorpusa+5; kz < LrazmerKorpusa-ThicknessRrazmerKorpusa-5; kz = kz + 5) {
+                    for (int ky = ThicknessRrazmerKorpusa+5; ky < HrazmerKorpusa-ThicknessRrazmerKorpusa-5; ky = ky + 5) {
+                        for (int kx = ThicknessRrazmerKorpusa+5; kx < WrazmerKorpusa-ThicknessRrazmerKorpusa-5; kx = kx + 5) {
 
                             System.out.println("do prov nustanovl="+nustnovl+" i="+i+" kz="+kz+" ky="+ky+" kx="+kx);
                             if (proverkaa(kx, ky, kz, bd[i].width(), bd[i].haight(), bd[i].length())) {

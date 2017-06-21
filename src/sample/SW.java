@@ -244,12 +244,12 @@ public class SW {
 
 
              fw.write("' Save As\n" +
-                     "longstatus = Part.SaveAs3(\"E:\\swproject\\swp\\Assem1.SLDASM\", 0, 2)\n" +
+                     "longstatus = Part.SaveAs3(\"E:\\swproject\\swp\\Assem1.SLDASM\", 0, 2)\n"  +
                      "\n" +
                      "' Close Document\n" +
                      "Set swAssembly = Nothing\n" +
                      "Set Part = Nothing\n" +
-                     "swApp.CloseDoc \"Assem1\"\n");
+                     "swApp.CloseDoc \"Assem1\"\n"  );
 
                 fw.write("End Sub");
                 fw.close();
